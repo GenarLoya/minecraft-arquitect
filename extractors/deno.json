@@ -1,0 +1,10 @@
+{
+  "name": "@minecraft-arquitect/extractors",
+  "exports": "./mod.ts",
+  "imports": {
+    "minecraft-data": "npm:minecraft-data@^3.78.0"
+  },
+  "tasks": {
+    "start": "deno run main.ts"
+  }
+}
