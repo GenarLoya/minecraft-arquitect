@@ -2,6 +2,7 @@
   "name": "@minecraft-arquitect/extractors",
   "exports": "./mod.ts",
   "imports": {
+    "minecraft-assets": "npm:minecraft-assets@^1.12.2",
     "minecraft-data": "npm:minecraft-data@^3.78.0"
   },
   "tasks": {

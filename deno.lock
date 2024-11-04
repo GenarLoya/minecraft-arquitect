@@ -6,8 +6,10 @@
     "jsr:@std/fs@^1.0.5": "1.0.5",
     "jsr:@std/internal@^1.0.5": "1.0.5",
     "jsr:@std/path@^1.0.7": "1.0.8",
+    "jsr:@std/path@^1.0.8": "1.0.8",
     "npm:chalk@5.3.0": "5.3.0",
     "npm:create-hono@*": "0.14.2",
+    "npm:minecraft-assets@^1.12.2": "1.12.2",
     "npm:minecraft-data@^3.78.0": "3.78.0"
   },
   "jsr": {
@@ -23,7 +25,7 @@
     "@std/fs@1.0.5": {
       "integrity": "41806ad6823d0b5f275f9849a2640d87e4ef67c51ee1b8fb02426f55e02fd44e",
       "dependencies": [
-        "jsr:@std/path"
+        "jsr:@std/path@^1.0.7"
       ]
     },
     "@std/internal@1.0.5": {
@@ -40,6 +42,9 @@
     "create-hono@0.14.2": {
       "integrity": "sha512-u/V4IKUxUKCb1oNIX13A4nP9aVeVYvWGcQ8wVK6AjSagR4gsjvo6F8SqqHa/maSKVOXnd7oSOQ4Q9QvpcurOsw=="
     },
+    "minecraft-assets@1.12.2": {
+      "integrity": "sha512-/eMxh3LNjCXOnU6KnQMjBM8dRnoJNpWIg7mD2m2RthraYiQK2FNzPWIKxWm2j3Ufcf5nzFXupgABledE86r4fQ=="
+    },
     "minecraft-data@3.78.0": {
       "integrity": "sha512-Ssks8QD31lsoxqa7LySTqeP9romsfAbfsSGiUHiGMeqfxRi/PtOxGLyKD1BXB8V/tXLztFcbQYqzIhprDkPguw=="
     }
@@ -48,6 +53,7 @@
     "dependencies": [
       "jsr:@std/assert@^1.0.7",
       "jsr:@std/fs@^1.0.5",
+      "jsr:@std/path@^1.0.8",
       "npm:chalk@5.3.0"
     ],
     "members": {
@@ -58,6 +64,7 @@
       },
       "extractors": {
         "dependencies": [
+          "npm:minecraft-assets@^1.12.2",
           "npm:minecraft-data@^3.78.0"
         ]
       }

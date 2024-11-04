@@ -1,5 +1,4 @@
-import minecraftAssets from "minecraft-assets";
-import minecraftData from "minecraft-data";
+import { mcAssets, mcData } from "./mcdata.ts";
 
 type itemImage = {
   image: string;
@@ -7,7 +6,7 @@ type itemImage = {
   width: number;
 };
 
-type Item = {
+type Block = {
   id: number;
   name: string;
   display_name: string;
@@ -15,17 +14,13 @@ type Item = {
   image: itemImage | null;
 };
 
-const MINECRAFT_VERSION = "1.20.2";
-const mcData = minecraftData(MINECRAFT_VERSION);
-const mcAssets = minecraftAssets(MINECRAFT_VERSION);
-
 const excludedItems = ["air"];
 
 const getIsExcludedItem = (name: string): boolean => {
   return excludedItems.includes(name);
 };
 
-export default function getItems(): Item[] {
+export default function getItems(): Block[] {
   return Object.values(mcData.items)
     .map((item) => {
       return {
@@ -39,7 +34,7 @@ export default function getItems(): Item[] {
     .filter((item) => !getIsExcludedItem(item.name));
 }
 
-export const getItemByName = (name: string): Item | null => {
+export const getItemByName = (name: string): Block | null => {
   if (getIsExcludedItem(name)) {
     return null;
   }

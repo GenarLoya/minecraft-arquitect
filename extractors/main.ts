@@ -1,3 +1,9 @@
-import getItems from "./src/getItems.ts";
+import getItems, { getItemTexture } from "./src/getItems.ts";
 
-console.log(getItems());
+const itemsCheckImage = ["acacia_boat"];
+
+itemsCheckImage.forEach((item) => {
+  const image = getItemTexture(item);
+
+  console.log(image);
+});
