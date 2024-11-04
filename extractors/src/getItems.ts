@@ -1,7 +1,7 @@
 import minecraftAssets from "minecraft-assets";
 import minecraftData from "minecraft-data";
 
-type itemImage = {
+type ItemImage = {
   image: string;
   height: number;
   width: number;
@@ -12,7 +12,7 @@ type Item = {
   name: string;
   display_name: string;
   stack_size: number;
-  image: itemImage | null;
+  image: ItemImage | null;
 };
 
 const MINECRAFT_VERSION = "1.20.2";
@@ -61,7 +61,7 @@ export const getItemByName = (name: string): Item | null => {
 
 const FORMAT_SEARCH = "png";
 
-export const getItemTexture = (name: string): itemImage | null => {
+export const getItemTexture = (name: string): ItemImage | null => {
   if (getIsExcludedItem(name)) {
     return null;
   }

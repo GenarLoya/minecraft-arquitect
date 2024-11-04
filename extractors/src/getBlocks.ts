@@ -1,6 +1,6 @@
 import { mcAssets, mcData } from "./mcdata.ts";
 
-type itemImage = {
+type BlockImage = {
   image: string;
   height: number;
   width: number;
@@ -11,52 +11,52 @@ type Block = {
   name: string;
   display_name: string;
   stack_size: number;
-  image: itemImage | null;
+  image: BlockImage | null;
 };
 
-const excludedItems = ["air"];
+const excludedItems = ["void_air", "soul_fire", "cave_air", "air", "fire"];
 
 const getIsExcludedItem = (name: string): boolean => {
   return excludedItems.includes(name);
 };
 
-export default function getItems(): Block[] {
-  return Object.values(mcData.items)
-    .map((item) => {
+export default function getBlocks(): Block[] {
+  return Object.values(mcData.blocks)
+    .map((block) => {
       return {
-        id: item.id,
-        name: item.name,
-        display_name: item.displayName,
-        stack_size: item.stackSize,
-        image: getItemTexture(item.name),
+        id: block.id,
+        name: block.name,
+        display_name: block.displayName,
+        stack_size: block.stackSize,
+        image: getBlockTexture(block.name),
       };
     })
     .filter((item) => !getIsExcludedItem(item.name));
 }
 
-export const getItemByName = (name: string): Block | null => {
+export const getBlockByName = (name: string): Block | null => {
   if (getIsExcludedItem(name)) {
     return null;
   }
 
-  const item = mcData.itemsByName[name];
+  const block = mcData.blocksByName[name];
 
-  if (!item) {
+  if (!block) {
     return null;
   }
 
   return {
-    id: item.id,
-    name: item.name,
-    display_name: item.displayName,
-    stack_size: item.stackSize,
-    image: getItemTexture(item.name),
+    id: block.id,
+    name: block.name,
+    display_name: block.displayName,
+    stack_size: block.stackSize,
+    image: getBlockTexture(block.name),
   };
 };
 
 const FORMAT_SEARCH = "png";
 
-export const getItemTexture = (name: string): itemImage | null => {
+export const getBlockTexture = (name: string): BlockImage | null => {
   if (getIsExcludedItem(name)) {
     return null;
   }
