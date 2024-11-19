@@ -2,6 +2,7 @@
   "name": "@minecraft-arquitect/extractors",
   "exports": "./mod.ts",
   "imports": {
+    "@std/assert": "jsr:@std/assert@^1.0.7",
     "minecraft-assets": "npm:minecraft-assets@^1.12.2",
     "minecraft-data": "npm:minecraft-data@^3.78.0"
   },
