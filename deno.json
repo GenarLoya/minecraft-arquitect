@@ -8,6 +8,7 @@
   },
   "compilerOptions": {
     "jsx": "precompile",
-    "jsxImportSource": "hono/jsx"
+    "jsxImportSource": "hono/jsx",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"]
   }
 }
