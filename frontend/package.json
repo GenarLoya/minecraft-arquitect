@@ -1,36 +1,19 @@
 {
   "name": "frontend",
   "type": "module",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
-    "preview": "deno run -A ./dist/server/entry.mjs",
-    "format": "deno fmt && prettier --write ."
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "@deno/astro-adapter": "^0.1.2",
-    "astro": "^4.9.3",
     "@astrojs/check": "^0.9.4",
+    "@astrojs/tailwind": "^5.1.2",
+    "astro": "^4.16.13",
+    "tailwindcss": "^3.4.15",
     "typescript": "^5.6.3"
-  },
-  "devDependencies": {
-    "prettier": "^3.3.1",
-    "prettier-plugin-astro": "^0.14.0"
-  },
-  "prettier": {
-    "tabWidth": 2,
-    "plugins": [
-      "./node_modules/prettier-plugin-astro/dist/index.js"
-    ],
-    "overrides": [
-      {
-        "files": "*.astro",
-        "options": {
-          "parser": "astro"
-        }
-      }
-    ]
   }
 }

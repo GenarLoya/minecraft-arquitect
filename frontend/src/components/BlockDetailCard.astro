@@ -1,0 +1,33 @@
+---
+import BlockIconDetail from "../icons/BlockIconDetail.astro";
+---
+
+<div
+  class="flex flex-col justify-center item-center h-max overflow-y-auto bg-primary p-common rounded-common shadow-md"
+>
+  <span class="text-lg block truncate w-full text-center" id="block-detail-name"
+    >Block</span
+  >
+  <div
+    class="flex flex-col justify-center items-center w-full rounded-common p-common bg-secondary"
+  >
+    <BlockIconDetail />
+  </div>
+</div>
+
+<script>
+  interface BlockDetail {
+    name: string;
+    details?: string;
+  }
+
+  const BlockName = document.getElementById(
+    "block-detail-name"
+  ) as HTMLSpanElement;
+
+  const block: BlockDetail = {
+    name: "Stone",
+  };
+
+  BlockName.innerText = block.name;
+</script>

@@ -1,9 +1,5 @@
-# Local Deno KV data
-.kv/
-
-# Astro build output
+# build output
 dist/
-
 # generated types
 .astro/
 
@@ -16,9 +12,13 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+
 # environment variables
 .env
 .env.production
 
 # macOS-specific files
 .DS_Store
+
+# jetbrains setting folder
+.idea/

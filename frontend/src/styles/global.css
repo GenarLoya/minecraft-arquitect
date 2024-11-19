@@ -1,0 +1,44 @@
+@font-face {
+  font-family: "MonoCraft"; /* Nombre que usarás en tu CSS */
+  src: url("../fonts/Monocraft.ttf") format("truetype"); /* Ruta al archivo */
+}
+
+* {
+  font-family: "MonoCraft";
+}
+
+/* Estilo general del scrollbar */
+::-webkit-scrollbar {
+  width: 10px; /* Ancho del scrollbar */
+  height: 10px; /* Alto del scrollbar para scroll horizontal */
+}
+
+/* Fondo del scrollbar */
+::-webkit-scrollbar-track {
+  background: #4c4c4c; /* Color oscuro, similar a la piedra */
+  border: 2px solid #2c2c2c; /* Borde grueso con estilo pixelado */
+}
+
+/* Thumb (la barra que se mueve) */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    45deg,
+    #76b041,
+    #8bbf50
+  ); /* Verde tipo bloques de césped */
+  border-radius: 0px; /* Sin redondear, estilo bloque */
+}
+
+/* Hover del thumb */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    45deg,
+    #8bbf50,
+    #a8d665
+  ); /* Color más claro al pasar el mouse */
+}
+
+/* Scrollbar horizontal */
+::-webkit-scrollbar-corner {
+  background: #2c2c2c; /* Esquina del scrollbar */
+}
